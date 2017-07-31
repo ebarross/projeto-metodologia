@@ -1,1 +1,1 @@
-# Projeto de Metodologia Científica
+# Projeto de Metodologia Científica - UFCG
