@@ -2,41 +2,36 @@ package com.metodologia.model;
 
 import com.metodologia.Utils.Util;
 
-public class QuickSort {
+public class QuickSort<T extends Comparable<T>> {
 
-	public void sort(String[] array) {
-		sort(array, 0, array.length);
+	public void sort(T[] array) {
+		sort(array, 0, array.length - 1);
 	}
 	
-	public void sort(String[] array, int leftIndex, int rightIndex) {
-		if (leftIndex >= 0 && rightIndex < array.length && leftIndex < rightIndex) {
+	public void sort(T[] array, int leftIndex, int rightIndex) {
+		if (leftIndex < rightIndex) {
 			int pivot = partition(array, leftIndex, rightIndex);
 			sort(array, leftIndex, pivot - 1);
 			sort(array, pivot + 1, rightIndex);
 		}
 	}
 
-	private int partition(String[] array, int leftIndex, int rightIndex) {
+	private int partition(T[] array, int leftIndex, int rightIndex) {
 		int i = leftIndex + 1;
 		int j = rightIndex;
-		String pivot = array[leftIndex];
+		T pivot = array[leftIndex];
 		
-		while (i < j) {
-			while (array[i].compareTo(pivot) <= 0) {
+		while (i <= j) {
+			if (array[i].compareTo(pivot) <= 0) {
 				i++;
-			}
-			
-			while (array[j].compareTo(pivot) > 0) {
+			} else if (pivot.compareTo(array[j]) < 0) {
 				j--;
-			}
-			
-			if (i < j) {
+			} else {
 				Util.swap(array, i, j);
 			}
 		}
 		
-		array[leftIndex] = array[j];
-		array[j] = pivot;
+		Util.swap(array, leftIndex, j);
 		
 		return j;
 	}
