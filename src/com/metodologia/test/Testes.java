@@ -9,6 +9,17 @@ import static org.junit.Assert.assertArrayEquals;
 public class Testes {
 
 	@Test
+	public void testeStrings() {
+		String[] array = {"Bala", "Cadeira", "Aviao"};
+		String[] ordered = {"Aviao", "Bala", "Cadeira"};
+		MergeSort<String> sorter = new MergeSort<>();
+		
+		sorter.sort(array);
+		
+		assertArrayEquals(array, ordered);
+	}
+	
+	@Test
 	public void testSortT1() {
 		Integer array[] = {};
 		Integer ordered[] = {};
