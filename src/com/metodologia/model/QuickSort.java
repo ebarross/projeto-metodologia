@@ -7,7 +7,7 @@ public class QuickSort<T extends Comparable<T>> {
 	public void sort(T[] array) {
 		sort(array, 0, array.length - 1);
 	}
-	
+
 	public void sort(T[] array, int leftIndex, int rightIndex) {
 		if (leftIndex < rightIndex) {
 			int pivot = partition(array, leftIndex, rightIndex);
@@ -20,7 +20,7 @@ public class QuickSort<T extends Comparable<T>> {
 		int i = leftIndex + 1;
 		int j = rightIndex;
 		T pivot = array[leftIndex];
-		
+
 		while (i <= j) {
 			if (array[i].compareTo(pivot) <= 0) {
 				i++;
@@ -30,10 +30,10 @@ public class QuickSort<T extends Comparable<T>> {
 				Util.swap(array, i, j);
 			}
 		}
-		
+
 		Util.swap(array, leftIndex, j);
-		
+
 		return j;
 	}
-	
+
 }
