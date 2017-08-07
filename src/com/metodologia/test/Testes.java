@@ -6,19 +6,22 @@ import com.metodologia.model.QuickSort;
 
 import static org.junit.Assert.assertArrayEquals;
 
+import java.util.Arrays;
+
 public class Testes {
 
 	@Test
 	public void testeStrings() {
-		String[] array = {"Bala", "Cadeira", "Aviao"};
-		String[] ordered = {"Aviao", "Bala", "Cadeira"};
+		String[] array = { "Bala", "Cadeira", "Aviao" };
+		String[] array2 = { "Bala", "Cadeira", "Aviao" };
 		MergeSort<String> sorter = new MergeSort<>();
-		
-		sorter.sort(array);
-		
-		assertArrayEquals(array, ordered);
+
+		Arrays.sort(array);
+		sorter.sort(array2);
+
+		assertArrayEquals(array, array2);
 	}
-	
+
 	@Test
 	public void testSortT1() {
 		Integer array[] = {};
