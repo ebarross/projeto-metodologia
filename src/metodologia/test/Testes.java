@@ -1,9 +1,13 @@
-package metodologia;
+package metodologia.test;
 
-import org.junit.Test;
 import static org.junit.Assert.assertArrayEquals;
 
 import java.util.Arrays;
+
+import org.junit.Test;
+
+import metodologia.MergeSort;
+import metodologia.QuickSort;
 
 public class Testes {
 
