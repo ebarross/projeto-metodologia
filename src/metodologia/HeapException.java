@@ -1,4 +1,4 @@
-package com.metodologia.exception;
+package metodologia;
 
 public class HeapException extends Exception {
 

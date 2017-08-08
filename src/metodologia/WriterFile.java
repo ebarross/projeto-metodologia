@@ -1,4 +1,4 @@
-package com.metodologia;
+package metodologia;
 
 import java.io.FileWriter;
 import java.io.IOException;

@@ -1,6 +1,4 @@
-package com.metodologia.model;
-
-import com.metodologia.Utils.Util;
+package metodologia;
 
 public class QuickSort<T extends Comparable<T>> {
 

@@ -1,7 +1,4 @@
-package com.metodologia.model;
-
-import com.metodologia.Utils.Util;
-import com.metodologia.exception.HeapException;
+package metodologia;
 
 public class MaxHeap<T extends Comparable<T>> {
 	private Integer sizeHeap;

@@ -1,4 +1,4 @@
-package com.metodologia.model;
+package metodologia;
 
 import java.util.Arrays;
 

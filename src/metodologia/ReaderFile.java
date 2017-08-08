@@ -1,4 +1,4 @@
-package com.metodologia;
+package metodologia;
 
 import java.io.*;
 import java.nio.ByteBuffer;

@@ -16,11 +16,11 @@ then
 fi 
   
 # --- Clean
-rm -rf ./bin/*
+rm -rf out/*
 
 # --- Build
 echo "Compiling files..."
-javac -d ./bin ./src/*/*.java
+javac -d ./out/production/projeto-metodologia/metodologia/ ./src/*/*.java
 echo "Compiled files"
 
 # --- Run
@@ -39,12 +39,12 @@ echo $INPUTFILE $OUTPUTFILE
 case $ALGORITHM in 
 1)
     echo "Running parallel algorithm..."
-	java -cp bin/ algorithm/RunnerAlgorithm par $INPUTFILE $OUTPUTFILE
+	java -cp out/production/projeto-metodologia/ metodologia/Runner par $INPUTFILE $OUTPUTFILE
     echo "Algorithm finalized" 
 ;;
 2)
     echo "Running sequential algorithm..."
-	java -cp bin/ algorithm/RunnerAlgorithm heap $INPUTFILE $OUTPUTFILE
+	java -cp out/production/projeto-metodologia/ metodologia/Runner heap $INPUTFILE $OUTPUTFILE
     echo "Algorithm finalized"
 ;;
 *)

@@ -1,4 +1,4 @@
-package com.metodologia.Utils;
+package metodologia;
 
 public class Util {
 	
