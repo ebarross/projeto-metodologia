@@ -1,7 +1,6 @@
 package metodologia;
 
 import java.io.IOException;
-import java.util.Arrays;
 
 public class Runner {
 	public static void main(String[] args) throws IOException, HeapException {
@@ -42,7 +41,7 @@ public class Runner {
 			writerFile.writeLines(escreve);
 
 		} else if (optionAlgorithm.equals("mergesort")) {
-			MergeSort mergeSort = new MergeSort();
+			MergeSort<String> mergeSort = new MergeSort<String>();
 
 			startTime = System.currentTimeMillis();
 
@@ -62,7 +61,7 @@ public class Runner {
 			writerFile.writeLines(escreve);
 
 		} else if (optionAlgorithm.equals("quicksort")) {
-			QuickSort quickSort = new QuickSort();
+			QuickSort<String> quickSort = new QuickSort<String>();
 
 			startTime = System.currentTimeMillis();
 
