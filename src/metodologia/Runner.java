@@ -33,7 +33,7 @@ public class Runner {
 			finalTime = System.currentTimeMillis();
 			System.out.println(finalTime);
 
-			String[] escreve = Arrays.copyOf(heap.toArray(), heap.toArray().length);
+			String[] escreve = Arrays.copyOf(heap.toArray(), heap.toArray().length + 1);
 			Long totalTime = finalTime - startTime;
 			escreve[escreve.length] = totalTime.toString();
 
