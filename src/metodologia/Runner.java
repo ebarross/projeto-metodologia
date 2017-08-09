@@ -35,16 +35,12 @@ public class Runner {
 
 			Long totalTime = finalTime - startTime;
 			String[] escreve = new String[heap.toArray().length + 2];
+
 			escreve[0] = "Ordenado pelo algoritmo HeapSort.";
 			escreve[1] = "Tempo de execucao: " + totalTime + " ms";
 			for (int i = 2; i < escreve.length; i++) {
 				escreve[i] = heap.toArray()[i - 2];
 			}
-			//String[] escreve = Arrays.copyOf(heap.toArray(), heap.toArray().length + 1);
-
-			//escreve[escreve.length-1] = "Tempo de execucao: " + totalTime + " ms";
-
-			System.out.println("Tempo de execucao: " + totalTime + " ms");
 
 			writerFile.writeLines(escreve);
 
@@ -59,9 +55,16 @@ public class Runner {
 			finalTime = System.currentTimeMillis();
 			System.out.println(finalTime);
 
-			System.out.println("Tempo de execucao: " + (finalTime - startTime) + " ms");
+			Long totalTime = finalTime - startTime;
+			String[] escreve = new String[dataInput.length + 2];
 
-			writerFile.writeLines(dataInput);
+			escreve[0] = "Ordenado pelo algoritmo HeapSort.";
+			escreve[1] = "Tempo de execucao: " + totalTime + " ms";
+			for (int i = 2; i < escreve.length; i++) {
+				escreve[i] = dataInput[i - 2];
+			}
+
+			writerFile.writeLines(escreve);
 
 		} else if (optionAlgorithm.equals("quicksort")) {
 			QuickSort quickSort = new QuickSort();
@@ -74,9 +77,16 @@ public class Runner {
 			finalTime = System.currentTimeMillis();
 			System.out.println(finalTime);
 
-			System.out.println("Tempo de execucao: " + (finalTime - startTime) + " ms");
+			Long totalTime = finalTime - startTime;
+			String[] escreve = new String[dataInput.length + 2];
 
-			writerFile.writeLines(dataInput);
+			escreve[0] = "Ordenado pelo algoritmo HeapSort.";
+			escreve[1] = "Tempo de execucao: " + totalTime + " ms";
+			for (int i = 2; i < escreve.length; i++) {
+				escreve[i] = dataInput[i - 2];
+			}
+
+			writerFile.writeLines(escreve);
 
 		}
 		System.exit(0);
