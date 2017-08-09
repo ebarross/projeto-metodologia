@@ -33,11 +33,18 @@ public class Runner {
 			finalTime = System.currentTimeMillis();
 			System.out.println(finalTime);
 
-			String[] escreve = Arrays.copyOf(heap.toArray(), heap.toArray().length + 1);
 			Long totalTime = finalTime - startTime;
-			escreve[escreve.length-1] = totalTime.toString();
+			String[] escreve = new String[heap.toArray().length + 2];
+			escreve[0] = "Ordenado pelo algoritmo HeapSort.";
+			escreve[1] = "Tempo de execucao: " + totalTime + " ms";
+			for (int i = 2; i < escreve.length; i++) {
+				escreve[i] = heap.toArray()[i - 2];
+			}
+			//String[] escreve = Arrays.copyOf(heap.toArray(), heap.toArray().length + 1);
 
-			System.out.println("Tempo de execucao: " + (finalTime - startTime) + " ms");
+			//escreve[escreve.length-1] = "Tempo de execucao: " + totalTime + " ms";
+
+			System.out.println("Tempo de execucao: " + totalTime + " ms");
 
 			writerFile.writeLines(escreve);
 
