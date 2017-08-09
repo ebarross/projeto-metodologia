@@ -26,12 +26,9 @@ public class Runner {
 
 			startTime = System.currentTimeMillis();
 
-			System.out.println(startTime);
-
 			heap.heapsort(dataInput);
 
 			finalTime = System.currentTimeMillis();
-			System.out.println(finalTime);
 
 			Long totalTime = finalTime - startTime;
 			String[] escreve = new String[heap.toArray().length + 2];
@@ -46,14 +43,12 @@ public class Runner {
 
 		} else if (optionAlgorithm.equals("mergesort")) {
 			MergeSort mergeSort = new MergeSort();
-			startTime = System.currentTimeMillis();
 
-			System.out.println(startTime);
+			startTime = System.currentTimeMillis();
 
 			mergeSort.sort(dataInput);
 
 			finalTime = System.currentTimeMillis();
-			System.out.println(finalTime);
 
 			Long totalTime = finalTime - startTime;
 			String[] escreve = new String[dataInput.length + 2];
@@ -68,14 +63,12 @@ public class Runner {
 
 		} else if (optionAlgorithm.equals("quicksort")) {
 			QuickSort quickSort = new QuickSort();
-			startTime = System.currentTimeMillis();
 
-			System.out.println(startTime);
+			startTime = System.currentTimeMillis();
 
 			quickSort.sort(dataInput);
 
 			finalTime = System.currentTimeMillis();
-			System.out.println(finalTime);
 
 			Long totalTime = finalTime - startTime;
 			String[] escreve = new String[dataInput.length + 2];
