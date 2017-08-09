@@ -38,19 +38,20 @@ fi
 echo $INPUTFILE $OUTPUTFILE
 case $ALGORITHM in 
 1)
-    echo "Ordenando com MergeSort..."
+	echo "Ordenando com MergeSort..."
 	java -cp bin/ metodologia/Runner mergesort $INPUTFILE $OUTPUTFILE
 ;;
 2)
-    echo "Ordenando com HeapSort..."
+	echo "Ordenando com HeapSort..."
 	java -cp bin/ metodologia/Runner heapsort $INPUTFILE $OUTPUTFILE
 ;;
 3)
-    echo "Ordenando com QuickSort..."
-    java -cp bin/ metodologia/Runner quicksort $INPUTFILE $OUTPUTFILE
+	echo "Ordenando com QuickSort..."
+	java -cp bin/ metodologia/Runner quicksort $INPUTFILE $OUTPUTFILE
+;;
 *)
 	echo "Something wrong happened. Please open the README.md file and check." 
 	exit
 ;;
-echo "Ordenado com sucesso!"
+
 esac
