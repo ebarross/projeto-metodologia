@@ -35,7 +35,7 @@ public class Runner {
 
 			String[] escreve = Arrays.copyOf(heap.toArray(), heap.toArray().length + 1);
 			Long totalTime = finalTime - startTime;
-			escreve[escreve.length] = totalTime.toString();
+			escreve[escreve.length-1] = totalTime.toString();
 
 			System.out.println("Tempo de execucao: " + (finalTime - startTime) + " ms");
 
