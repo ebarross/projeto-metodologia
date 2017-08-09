@@ -16,7 +16,7 @@ public class Runner {
 
 		WriterFile writerFile = new WriterFile(pathOutput);
 
-		if (optionAlgorithm.equals("heap")) {
+		if (optionAlgorithm.equals("heapsort")) {
 			MaxHeap<String> heap = new MaxHeap<String>(dataInput.length);
 
 			for (String data : dataInput) {
@@ -36,13 +36,28 @@ public class Runner {
 
 			writerFile.writeLines(heap.toArray());
 
-		} else if (optionAlgorithm.equals("par")) {
+		} else if (optionAlgorithm.equals("mergesort")) {
 			MergeSort mergeSort = new MergeSort();
 			startTime = System.currentTimeMillis();
 
 			System.out.println(startTime);
 
 			mergeSort.sort(dataInput);
+
+			finalTime = System.currentTimeMillis();
+			System.out.println(finalTime);
+
+			System.out.println("Tempo de execucao: " + (finalTime - startTime) + " ms");
+
+			writerFile.writeLines(dataInput);
+
+		} else if (optionAlgorithm.equals("quicksort")) {
+			QuickSort quickSort = new QuickSort();
+			startTime = System.currentTimeMillis();
+
+			System.out.println(startTime);
+
+			quickSort.sort(dataInput);
 
 			finalTime = System.currentTimeMillis();
 			System.out.println(finalTime);

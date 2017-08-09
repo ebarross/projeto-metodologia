@@ -38,17 +38,19 @@ fi
 echo $INPUTFILE $OUTPUTFILE
 case $ALGORITHM in 
 1)
-    echo "Running parallel algorithm..."
-	java -cp bin/ metodologia/Runner par $INPUTFILE $OUTPUTFILE
-    echo "Algorithm finalized" 
+    echo "Ordenando com MergeSort..."
+	java -cp bin/ metodologia/Runner mergesort $INPUTFILE $OUTPUTFILE
 ;;
 2)
-    echo "Running sequential algorithm..."
-	java -cp bin/ metodologia/Runner heap $INPUTFILE $OUTPUTFILE
-    echo "Algorithm finalized"
+    echo "Ordenando com HeapSort..."
+	java -cp bin/ metodologia/Runner heapsort $INPUTFILE $OUTPUTFILE
 ;;
+3)
+    echo "Ordenando com QuickSort..."
+    java -cp bin/ metodologia/Runner quicksort $INPUTFILE $OUTPUTFILE
 *)
 	echo "Something wrong happened. Please open the README.md file and check." 
 	exit
 ;;
+echo "Ordenado com sucesso!"
 esac
