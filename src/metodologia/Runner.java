@@ -58,7 +58,7 @@ public class Runner {
 			Long totalTime = finalTime - startTime;
 			String[] escreve = new String[dataInput.length + 2];
 
-			escreve[0] = "Ordenado pelo algoritmo HeapSort.";
+			escreve[0] = "Ordenado pelo algoritmo MergeSort.";
 			escreve[1] = "Tempo de execucao: " + totalTime + " ms";
 			for (int i = 2; i < escreve.length; i++) {
 				escreve[i] = dataInput[i - 2];
@@ -80,7 +80,7 @@ public class Runner {
 			Long totalTime = finalTime - startTime;
 			String[] escreve = new String[dataInput.length + 2];
 
-			escreve[0] = "Ordenado pelo algoritmo HeapSort.";
+			escreve[0] = "Ordenado pelo algoritmo QuickSort.";
 			escreve[1] = "Tempo de execucao: " + totalTime + " ms";
 			for (int i = 2; i < escreve.length; i++) {
 				escreve[i] = dataInput[i - 2];
