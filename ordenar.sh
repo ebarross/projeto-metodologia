@@ -19,9 +19,9 @@ fi
 rm -rf ./bin/*
 
 # --- Build
-echo "Compiling files..."
+echo "Compilando arquivos..."
 javac -d ./bin ./src/*/*.java
-echo "Compiled files"
+echo "Arquivos compilados com sucesso!"
 
 # --- Run
 if [ ! -z $INPUTFILE ] 
@@ -31,23 +31,24 @@ then
 		echo "Input file does not exist"
 		exit
 	fi
-	#cp -R $INPUTFILE bin/
 fi
 
-#cd bin
 echo $INPUTFILE $OUTPUTFILE
 case $ALGORITHM in 
 1)
 	echo "Ordenando com MergeSort..."
 	java -cp bin/ metodologia/Runner mergesort $INPUTFILE $OUTPUTFILE
+	echo "Ordenado com sucesso!"
 ;;
 2)
 	echo "Ordenando com HeapSort..."
 	java -cp bin/ metodologia/Runner heapsort $INPUTFILE $OUTPUTFILE
+	echo "Ordenado com sucesso!"
 ;;
 3)
 	echo "Ordenando com QuickSort..."
 	java -cp bin/ metodologia/Runner quicksort $INPUTFILE $OUTPUTFILE
+	echo "Ordenado com sucesso!"
 ;;
 *)
 	echo "Something wrong happened. Please open the README.md file and check." 
