@@ -25,8 +25,8 @@ public class Runner {
 		if (optionAlgorithm.equals("heapsort")) {
 			MaxHeap<Integer> heap = new MaxHeap<Integer>(dataInput.length);
 
-			for (String data : dataInput) {
-				heap.insert(Integer.parseInt(data));
+			for (Integer data : intInput) {
+				heap.insert(data);
 			}
 
 			startTime = System.currentTimeMillis();
