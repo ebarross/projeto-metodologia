@@ -23,7 +23,7 @@ public class Runner {
 		WriterFile writerFile = new WriterFile(pathOutput);
 
 		if (optionAlgorithm.equals("heapsort")) {
-			MaxHeap<Integer> heap = new MaxHeap<Integer>(dataInput.length);
+			MaxHeap<Integer> heap = new MaxHeap<Integer>(intInput.length);
 
 			for (Integer data : intInput) {
 				heap.insert(data);
@@ -40,10 +40,10 @@ public class Runner {
 
 			escreve[0] = "Ordenado pelo algoritmo HeapSort.";
 			escreve[1] = "Tempo de execucao: " + totalTime + " ms";
-/*			for (int i = 2; i < escreve.length; i++) {
-				escreve[i] = heap.toArray()[i - 2];
+			for (int i = 2; i < escreve.length; i++) {
+				escreve[i] = String.valueOf(heap.toArray()[i - 2]);
 			}
-*/
+
 			writerFile.writeLines(escreve);
 
 		} else if (optionAlgorithm.equals("mergesort")) {
