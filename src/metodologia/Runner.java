@@ -8,8 +8,9 @@ public class Runner {
 		String pathInput = args.length > 1 ? args[1] : "";
 		String pathOutput = args.length > 2 ? args[2] : "output.txt";
 
-		Long startTime;
-		Long finalTime;
+		Long startTime = 0L;
+		Long finalTime = 0L;
+		Long totalTime;
 		
 		ReaderFile readerFile = new ReaderFile(pathInput);
 		String[] dataInput = readerFile.readerLines();
@@ -21,6 +22,8 @@ public class Runner {
 		}
 
 		WriterFile writerFile = new WriterFile(pathOutput);
+		String[] escreve = new String[dataInput.length + 2];
+		Integer[] orderedArray = {};
 
 		if (optionAlgorithm.equals("heapsort")) {
 			MaxHeap<Integer> heap = new MaxHeap<Integer>(intInput.length);
@@ -35,58 +38,54 @@ public class Runner {
 
 			finalTime = System.currentTimeMillis();
 
-			Long totalTime = finalTime - startTime;
-			String[] escreve = new String[heap.toArray().length + 2];
-
+			orderedArray = heap.toArray();
+			//escreve = new String[heap.toArray().length + 2];
+/*
 			escreve[0] = "Ordenado pelo algoritmo HeapSort.";
 			escreve[1] = "Tempo de execucao: " + totalTime + " ms";
 			for (int i = 2; i < escreve.length; i++) {
 				escreve[i] = String.valueOf(heap.toArray()[i - 2]);
-			}
-
-			writerFile.writeLines(escreve);
+			}*/
 
 		} else if (optionAlgorithm.equals("mergesort")) {
-			MergeSort<String> mergeSort = new MergeSort<String>();
+			MergeSort<Integer> mergeSort = new MergeSort<Integer>();
 
 			startTime = System.currentTimeMillis();
 
-			mergeSort.sort(dataInput);
+			mergeSort.sort(intInput);
 
 			finalTime = System.currentTimeMillis();
 
-			Long totalTime = finalTime - startTime;
-			String[] escreve = new String[dataInput.length + 2];
+			orderedArray = intInput;
 
-			escreve[0] = "Ordenado pelo algoritmo MergeSort.";
-			escreve[1] = "Tempo de execucao: " + totalTime + " ms";
-			for (int i = 2; i < escreve.length; i++) {
-				escreve[i] = dataInput[i - 2];
-			}
-
-			writerFile.writeLines(escreve);
 
 		} else if (optionAlgorithm.equals("quicksort")) {
-			QuickSort<String> quickSort = new QuickSort<String>();
+			QuickSort<Integer> quickSort = new QuickSort<Integer>();
 
 			startTime = System.currentTimeMillis();
 
-			quickSort.sort(dataInput);
+			quickSort.sort(intInput);
 
 			finalTime = System.currentTimeMillis();
 
-			Long totalTime = finalTime - startTime;
-			String[] escreve = new String[dataInput.length + 2];
-
+			orderedArray = intInput;
+			//escreve = new String[dataInput.length + 2];
+/*
 			escreve[0] = "Ordenado pelo algoritmo QuickSort.";
 			escreve[1] = "Tempo de execucao: " + totalTime + " ms";
 			for (int i = 2; i < escreve.length; i++) {
-				escreve[i] = dataInput[i - 2];
-			}
-
-			writerFile.writeLines(escreve);
+				escreve[i] = intInput[i - 2].toString();
+			}*/
 
 		}
+
+		totalTime = finalTime - startTime;
+		escreve[0] = "Ordenado pelo algoritmo " + optionAlgorithm;
+		escreve[1] = "Tempo de execucao: " + totalTime + " ms";
+		for (int i = 2; i < escreve.length; i++) {
+			escreve[i] = orderedArray[i - 2].toString();
+		}
+		writerFile.writeLines(escreve);
 		System.exit(0);
 	}
 }
