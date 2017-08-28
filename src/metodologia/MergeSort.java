@@ -24,7 +24,7 @@ public class MergeSort<T extends Comparable<T>> {
 		int k = leftIndex;
 
 		while (i <= middle && j <= rightIndex) {
-			if (aux[i].compareTo(aux[j]) <= 0) {
+			if (aux[i].compareTo(aux[j]) >= 0) {
 				array[k++] = aux[i++];
 			} else {
 				array[k++] = aux[j++];
