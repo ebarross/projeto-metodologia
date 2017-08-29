@@ -39,13 +39,6 @@ public class Runner {
 			finalTime = System.currentTimeMillis();
 
 			orderedArray = heap.toArray();
-			//escreve = new String[heap.toArray().length + 2];
-/*
-			escreve[0] = "Ordenado pelo algoritmo HeapSort.";
-			escreve[1] = "Tempo de execucao: " + totalTime + " ms";
-			for (int i = 2; i < escreve.length; i++) {
-				escreve[i] = String.valueOf(heap.toArray()[i - 2]);
-			}*/
 
 		} else if (optionAlgorithm.equals("mergesort")) {
 			MergeSort<Integer> mergeSort = new MergeSort<Integer>();
@@ -69,13 +62,6 @@ public class Runner {
 			finalTime = System.currentTimeMillis();
 
 			orderedArray = intInput;
-			//escreve = new String[dataInput.length + 2];
-/*
-			escreve[0] = "Ordenado pelo algoritmo QuickSort.";
-			escreve[1] = "Tempo de execucao: " + totalTime + " ms";
-			for (int i = 2; i < escreve.length; i++) {
-				escreve[i] = intInput[i - 2].toString();
-			}*/
 
 		}
 
