@@ -15,56 +15,56 @@ public class Runner {
 		ReaderFile readerFile = new ReaderFile(pathInput);
 		String[] dataInput = readerFile.readerLines();
 
-		Integer[] intInput = new Integer[dataInput.length];
+		Long[] longInput = new Long[dataInput.length];
 
 		for (int i = 0; i < dataInput.length; i++) {
 			if (!dataInput[i].equals("")) {
-				intInput[i] = Integer.parseInt(dataInput[i]);
+				longInput[i] = Long.parseLong(dataInput[i]);
 			}
 
 		}
 
 		WriterFile writerFile = new WriterFile(pathOutput);
 		String[] escreve = new String[dataInput.length + 2];
-		Integer[] orderedArray = {};
+		Long[] orderedArray = {};
 
 		if (optionAlgorithm.equals("heapsort")) {
-			MaxHeap<Integer> heap = new MaxHeap<Integer>(intInput.length);
+			MaxHeap<Long> heap = new MaxHeap<Long>(longInput.length);
 
-			for (Integer data : intInput) {
+			for (Long data : longInput) {
 				heap.insert(data);
 			}
 
 			startTime = System.currentTimeMillis();
 
-			heap.heapsort(intInput);
+			heap.heapsort(longInput);
 
 			finalTime = System.currentTimeMillis();
 
 			orderedArray = heap.toArray();
 
 		} else if (optionAlgorithm.equals("mergesort")) {
-			MergeSort<Integer> mergeSort = new MergeSort<Integer>();
+			MergeSort<Long> mergeSort = new MergeSort<Long>();
 
 			startTime = System.currentTimeMillis();
 
-			mergeSort.sort(intInput);
+			mergeSort.sort(longInput);
 
 			finalTime = System.currentTimeMillis();
 
-			orderedArray = intInput;
+			orderedArray = longInput;
 
 
 		} else if (optionAlgorithm.equals("quicksort")) {
-			QuickSort<Integer> quickSort = new QuickSort<Integer>();
+			QuickSort<Long> quickSort = new QuickSort<Long>();
 
 			startTime = System.currentTimeMillis();
 
-			quickSort.sort(intInput);
+			quickSort.sort(longInput);
 
 			finalTime = System.currentTimeMillis();
 
-			orderedArray = intInput;
+			orderedArray = longInput;
 
 		}
 
