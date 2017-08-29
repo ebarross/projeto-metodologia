@@ -18,7 +18,10 @@ public class Runner {
 		Integer[] intInput = new Integer[dataInput.length];
 
 		for (int i = 0; i < dataInput.length; i++) {
-			intInput[i] = Integer.parseInt(dataInput[i]);
+			if (!dataInput[i].equals("")) {
+				intInput[i] = Integer.parseInt(dataInput[i]);
+			}
+
 		}
 
 		WriterFile writerFile = new WriterFile(pathOutput);
