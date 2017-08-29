@@ -56,3 +56,4 @@ case $ALGORITHM in
 ;;
 
 esac
+cat output.txt | head -n 2
