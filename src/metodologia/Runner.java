@@ -18,7 +18,7 @@ public class Runner {
 		Integer[] intInput = new Integer[dataInput.length];
 
 		for (int i = 0; i < dataInput.length; i++) {
-			if (dataInput[i].length() <= 6 ) {
+			if (!dataInput[i].equals("")) {
 				intInput[i] = Integer.parseInt(dataInput[i]);
 			}
 
